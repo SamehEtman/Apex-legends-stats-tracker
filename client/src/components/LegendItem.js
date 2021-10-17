@@ -14,6 +14,7 @@ const LegendItem = ({ legend }) => {
       );
     });
   };
+  if (!legend.stats) return null;
   return (
     <div className="item legend-item ">
       <img
