@@ -7,14 +7,17 @@ const LegendItem = ({ legend }) => {
     return keys.map((key) => {
       return (
         <div>
-          <div className="header" style={{ verticalAlign: 'center' }}>
+          <div className="header">
             {key} : {stats[key].value}{' '}
           </div>
         </div>
       );
     });
   };
-  if (!legend.stats) return null;
+
+  if (Object.keys(legend.stats).length === 0) {
+    return null;
+  }
   return (
     <div className="item legend-item ">
       <img
@@ -23,7 +26,6 @@ const LegendItem = ({ legend }) => {
         alt={legend.metadata.name}
       />
       <div className="content">
-        <div className="header">{legend.metadata.name}</div>
         <div className="header">{renderStats(legend.stats)}</div>
       </div>
     </div>

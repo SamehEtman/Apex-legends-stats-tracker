@@ -5,12 +5,12 @@ import LegendsList from './LegendsList';
 const App = () => {
   const [searchId, setSearchId] = useState('');
   const [legendsList, setLegendsList] = useState([]);
+  
   useEffect(() => {
     if (!searchId) return;
     const fetchStats = async (id) => {
       const { data } = await axio.get(`/api/${id}`);
       let toSend;
-
       if (data.data) {
         toSend = data.data;
         toSend.sort((item1, item2) => {
