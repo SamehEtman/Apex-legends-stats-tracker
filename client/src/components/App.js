@@ -9,7 +9,7 @@ const App = () => {
     if (!searchId) return;
     const fetchStats = async (id) => {
       const { data } = await axio.get(`/api/${id}`);
-      setLegendsList(data.data);
+      setLegendsList(data.data ? data.data : data);
     };
     fetchStats(searchId);
   }, [searchId]);

@@ -1,24 +1,25 @@
 import React from 'react';
+import './LegendItem.css';
 
 const LegendItem = ({ legend }) => {
   const renderStats = (stats) => {
     const keys = Object.keys(stats);
-    console.log(keys);
     return keys.map((key) => {
       return (
         <div>
-          <div className="header" style = {{verticalAlign : 'center'}}>{key} : {stats[key].value} </div>
+          <div className="header" style={{ verticalAlign: 'center' }}>
+            {key} : {stats[key].value}{' '}
+          </div>
         </div>
       );
     });
   };
   return (
-    <div className="item">
+    <div className="item legend-item ">
       <img
         className="ui image"
         src={legend.metadata.imageUrl}
         alt={legend.metadata.name}
-        style = {{width : '100px', height :'100px'}}
       />
       <div className="content">
         <div className="header">{legend.metadata.name}</div>
