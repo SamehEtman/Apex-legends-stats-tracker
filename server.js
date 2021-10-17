@@ -12,7 +12,7 @@ app.get('/api/:id', (req, res, next) => {
     method: 'GET',
     url: URL(req.params.id),
     headers: {
-      API_HEADER: API_KEY,
+      'TRN-Api-Key': API_KEY,
     },
   };
   request(options, function (error, response) {

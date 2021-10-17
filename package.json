@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "client" : "cd client && npm start",
+    "start" : "concurrently \"npm run dev \" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
