@@ -1,13 +1,13 @@
 import React from 'react';
 
-const LegendItem = (legend) => {
+const LegendItem = ({ legend }) => {
   const renderStats = (stats) => {
     const keys = Object.keys(stats);
-    return keys.forEach((key) => {
+    console.log(keys);
+    return keys.map((key) => {
       return (
         <div>
-          <div className="header">{key}</div>
-          <div className="header">{stats[key]}</div>
+          <div className="header" style = {{verticalAlign : 'center'}}>{key} : {stats[key].value} </div>
         </div>
       );
     });
@@ -18,10 +18,11 @@ const LegendItem = (legend) => {
         className="ui image"
         src={legend.metadata.imageUrl}
         alt={legend.metadata.name}
+        style = {{width : '100px', height :'100px'}}
       />
       <div className="content">
         <div className="header">{legend.metadata.name}</div>
-        <div className="description">{renderStats(legend.stats)}</div>
+        <div className="header">{renderStats(legend.stats)}</div>
       </div>
     </div>
   );
