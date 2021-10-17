@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
-import LegendItem from './LegendItem';
+import LegendsList from './LegendsList';
 const App = () => {
   const [searchId, setSearchId] = useState('');
 
   return (
     <div>
       <SearchBar searchId={searchId} setSearchId={setSearchId} />
-      <LegendItem />
+      <LegendsList />
     </div>
   );
 };
