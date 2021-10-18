@@ -28,6 +28,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-app.listen(3001, () => {
-  console.log('express server on port ', 3001);
+const port = process.env.PORT || 3001
+app.listen(port, () => {
+  console.log('express server on port ', port);
 });
