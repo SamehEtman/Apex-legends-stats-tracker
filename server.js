@@ -1,7 +1,7 @@
 const express = require('express');
 const request = require('request');
 const cors = require('cors');
-const { API_HEADER, API_KEY, URL } = require('./keys/keys');
+const { API_KEY, URL } = require('./keys/keys');
 const app = express();
 
 app.use(express.json());
