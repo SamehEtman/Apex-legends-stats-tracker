@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axio from 'axios';
 import SearchBar from './SearchBar';
 import LegendsList from './LegendsList';
+import Socials from './Socials';
 const App = () => {
   const [searchId, setSearchId] = useState('');
   const [legendsList, setLegendsList] = useState([]);
-  
+
   useEffect(() => {
     if (!searchId) return;
     const fetchStats = async (id) => {
@@ -40,6 +41,8 @@ const App = () => {
     <div>
       <SearchBar searchId={searchId} setSearchId={setSearchId} />
       <LegendsList legendsList={legendsList} />
+            <Socials />
+
     </div>
   );
 };
