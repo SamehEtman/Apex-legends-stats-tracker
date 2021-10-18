@@ -10,7 +10,7 @@ const SearchBar = ({ searchId, setSearchId }) => {
     <div>
       <form
         className="ui form container"
-        style={{ marginTop: '20px' }}
+        style={{ paddingTop: '20px' }}
         onSubmit={(e) => onFormSubmit(e)}
       >
         <div className="field">
