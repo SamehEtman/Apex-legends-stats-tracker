@@ -9,7 +9,7 @@ const LegendsList = ({ legendsList }) => {
     );
   }
   const renderedItems = legendsList.map((legend) => {
-    return <LegendItem legend={legend} key={legend.attributes.id} />;
+    return <LegendItem legend={legend}  />;
   });
 
   return (

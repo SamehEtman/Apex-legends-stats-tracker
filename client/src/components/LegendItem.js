@@ -2,13 +2,14 @@ import React from 'react';
 import './LegendItem.css';
 
 const LegendItem = ({ legend }) => {
+
   const renderStats = (stats) => {
     const keys = Object.keys(stats);
-    return keys.map((key) => {
+    return keys.map((item , idx) => {
       return (
-        <div>
-          <div className="header">
-            {key} : {stats[key].value}{' '}
+        <div key={idx}>
+          <div className="header" >
+            {item} : {stats[item].value}{' '}
           </div>
         </div>
       );
@@ -19,7 +20,7 @@ const LegendItem = ({ legend }) => {
     return null;
   }
   return (
-    <div className="item legend-item ">
+    <div className="item legend-item "  >
       <img
         className="ui image"
         src={legend.metadata.imageUrl}
